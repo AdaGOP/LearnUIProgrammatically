@@ -86,7 +86,38 @@ class ViewController: UIViewController {
             stackView.centerYAnchor.constraint(equalToSystemSpacingBelow: view.centerYAnchor, multiplier: 1),
             stackView.heightAnchor.constraint(equalToConstant: view.bounds.size.height/7)
         ])
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showFirstOverlay()
+    }
+    
+    func showFirstOverlay() {
+        let overlayView = OverlayOnBoarding(title: "This is your last chance. After this there is no turning back. You take the axe, the story ends if that is not the right moment; you wake up in your bed and believe whatever you want to believe.", anchorView: axeButton)
+        overlayView.frame = view.frame
+        view.addSubview(overlayView)
         
+        overlayView.onTap = { [weak self, weak overlayView] in
+            overlayView?.hideOverlay { _ in
+                overlayView?.removeFromSuperview()
+                self?.showSecondOverlay()
+            }
+        }
+        overlayView.showOverlay()
+    }
+    
+    func showSecondOverlay() {
+        let overlayView = OverlayOnBoarding(title: "You take the gun, you could win. But if then you stay in Wonderland and I show you how deep the rabbit hole goes.", anchorView: gunButton)
+        overlayView.frame = view.frame
+        view.addSubview(overlayView)
+        
+        overlayView.onTap = { [weak overlayView] in
+            overlayView?.hideOverlay { _ in
+                overlayView?.removeFromSuperview()
+            }
+        }
+        overlayView.showOverlay()
     }
 
 }
