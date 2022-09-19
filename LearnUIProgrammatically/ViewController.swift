@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         let titleLbl = UILabel()
         titleLbl.text = "Hello and welcome!"
         titleLbl.font = .boldSystemFont(ofSize: 24)
+        titleLbl.backgroundColor = .black
+        titleLbl.numberOfLines = 0
         titleLbl.translatesAutoresizingMaskIntoConstraints = false
         return titleLbl
     }()
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
     private lazy var bodyLabel: UILabel = {
         let bodyLbl = UILabel()
         bodyLbl.text = "This place is not safe. You need two weapons below to help you attack your enemy."
+        bodyLbl.font = .systemFont(ofSize: 16)
+        bodyLbl.backgroundColor = .gray
         bodyLbl.numberOfLines = 0
         bodyLbl.translatesAutoresizingMaskIntoConstraints = false
         return bodyLbl
