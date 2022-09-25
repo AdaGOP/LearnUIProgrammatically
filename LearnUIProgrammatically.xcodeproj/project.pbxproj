@@ -16,6 +16,7 @@
 		4E1234AD28D8A77800DB8931 /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1234AC28D8A77800DB8931 /* ReusableLabel.swift */; };
 		4E1234AF28D8B0A700DB8931 /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1234AE28D8B0A700DB8931 /* ReusableButton.swift */; };
 		4E1234B228D8B40500DB8931 /* ReusableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1234B128D8B40500DB8931 /* ReusableStackView.swift */; };
+		4E2CFB6728E0424D001EFCE6 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2CFB6628E0424D001EFCE6 /* OnBoardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4E1234AC28D8A77800DB8931 /* ReusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
 		4E1234AE28D8B0A700DB8931 /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
 		4E1234B128D8B40500DB8931 /* ReusableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableStackView.swift; sourceTree = "<group>"; };
+		4E2CFB6628E0424D001EFCE6 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 			children = (
 				4E12348E28D74B6700DB8931 /* AppDelegate.swift */,
 				4E12349028D74B6700DB8931 /* SceneDelegate.swift */,
-				4E12349228D74B6700DB8931 /* ViewController.swift */,
+				4E2CFB6428E04224001EFCE6 /* View */,
+				4E2CFB6528E04233001EFCE6 /* Controller */,
 				4E1234B028D8B0B000DB8931 /* Theme */,
 				4E12349728D74B6900DB8931 /* Assets.xcassets */,
 				4E12349928D74B6900DB8931 /* LaunchScreen.storyboard */,
@@ -82,6 +85,22 @@
 				4E1234A428D76DC600DB8931 /* OverlayOnBoarding.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		4E2CFB6428E04224001EFCE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E2CFB6628E0424D001EFCE6 /* OnBoardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E2CFB6528E04233001EFCE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E12349228D74B6700DB8931 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +178,7 @@
 				4E1234AF28D8B0A700DB8931 /* ReusableButton.swift in Sources */,
 				4E1234AD28D8A77800DB8931 /* ReusableLabel.swift in Sources */,
 				4E12349128D74B6700DB8931 /* SceneDelegate.swift in Sources */,
+				4E2CFB6728E0424D001EFCE6 /* OnBoardingView.swift in Sources */,
 				4E1234B228D8B40500DB8931 /* ReusableStackView.swift in Sources */,
 				4E1234A528D76DC600DB8931 /* OverlayOnBoarding.swift in Sources */,
 			);

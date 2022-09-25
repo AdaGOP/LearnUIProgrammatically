@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  OnBoardingView.swift
 //  LearnUIProgrammatically
 //
-//  Created by khoirunnisa' rizky noor fatimah on 18/09/22.
+//  Created by khoirunnisa' rizky noor fatimah on 25/09/22.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class OnBoardingView: UIView {
+
     private lazy var titleLabel: ReusableLabel = {
         let label = ReusableLabel(labelText: "Hello and welcome!", labelType: .title)
         return label
@@ -41,33 +41,37 @@ class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var stackView = ReusableStackView(spacingValue: 5, subView: [titleLabel, bodyLabel, spacer, buttonStackView], axisValue: .vertical, distributionValue: .fill)
+    private lazy var stackView: ReusableStackView = {
+        let stackV = ReusableStackView(spacingValue: 5, subView: [titleLabel, bodyLabel, spacer, buttonStackView], axisValue: .vertical, distributionValue: .fill)
+        addSubview(stackV)
+        return stackV
+    }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(stackView)
-        setUpView()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUpView() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .white
+        layer.cornerRadius = 20
+        setupAutoLayout()
+    }
+    
+    private func setupAutoLayout() {
         NSLayoutConstraint.activate([
-            stackView.leftAnchor.constraint(equalTo:view.leftAnchor, constant: 20),
-            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            stackView.centerYAnchor.constraint(equalToSystemSpacingBelow: view.centerYAnchor, multiplier: 1),
-            stackView.heightAnchor.constraint(equalToConstant: view.bounds.size.height/7)
+            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            stackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        showFirstOverlay()
     }
     
     func showFirstOverlay() {
         let overlayView = OverlayOnBoarding(title: "This is your last chance. After this there is no turning back. You take the axe, the story ends if that is not the right moment; you wake up in your bed and believe whatever you want to believe.", anchorView: axeButton)
-        overlayView.frame = view.frame
-        view.addSubview(overlayView)
+        overlayView.frame = self.frame
+        addSubview(overlayView)
         
         overlayView.onTap = { [weak self, weak overlayView] in
             overlayView?.hideOverlay { _ in
@@ -80,8 +84,8 @@ class ViewController: UIViewController {
     
     func showSecondOverlay() {
         let overlayView = OverlayOnBoarding(title: "You take the gun, you could win. But if then you stay in Wonderland and I show you how deep the rabbit hole goes.", anchorView: gunButton)
-        overlayView.frame = view.frame
-        view.addSubview(overlayView)
+        overlayView.frame = self.frame
+        addSubview(overlayView)
         
         overlayView.onTap = { [weak overlayView] in
             overlayView?.hideOverlay { _ in
@@ -91,5 +95,5 @@ class ViewController: UIViewController {
         overlayView.showOverlay()
     }
 
-}
 
+}
