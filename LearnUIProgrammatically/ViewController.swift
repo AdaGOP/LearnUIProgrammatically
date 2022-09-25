@@ -9,17 +9,38 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var titleLabel = ReusableLabel(labelText: "Hello and welcome!", labelType: .title)
-    private lazy var bodyLabel = ReusableLabel(labelText: "This place is not safe. You need two weapons below to help you attack your enemy.", labelType: .subtitle)
-    private lazy var axeButton = ReusableButton(title: "Axe", color: .blue)
-    private lazy var gunButton = ReusableButton(title: "Gun", color: .red)
-    private lazy var buttonStackView = ReusableStackView(spacingValue: 5, subView: [gunButton, axeButton], axisValue: .horizontal, distributionValue: .fillProportionally)
+    private lazy var titleLabel: ReusableLabel = {
+        let label = ReusableLabel(labelText: "Hello and welcome!", labelType: .title)
+        return label
+    }()
+    
+    private lazy var bodyLabel: ReusableLabel = {
+        let label = ReusableLabel(labelText: "This place is not safe. You need two weapons below to help you attack your enemy.", labelType: .subtitle)
+        return label
+    }()
+    
+    private lazy var axeButton: ReusableButton = {
+        let button = ReusableButton(title: "Axe", color: .blue)
+        return button
+    }()
+    
+    private lazy var gunButton: ReusableButton = {
+        let button = ReusableButton(title: "Gun", color: .red)
+        return button
+    }()
+    
+    private lazy var buttonStackView: ReusableStackView = {
+        let stackV = ReusableStackView(spacingValue: 5, subView: [gunButton, axeButton], axisValue: .horizontal, distributionValue: .fillProportionally)
+        return stackV
+    }()
+    
     private lazy var spacer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.heightAnchor.constraint(equalToConstant: 10).isActive = true
         return view
     }()
+    
     private lazy var stackView = ReusableStackView(spacingValue: 5, subView: [titleLabel, bodyLabel, spacer, buttonStackView], axisValue: .vertical, distributionValue: .fill)
 
     override func viewDidLoad() {
