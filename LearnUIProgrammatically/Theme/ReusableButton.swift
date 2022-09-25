@@ -14,11 +14,7 @@ class ReusableButton: UIButton {
     }
     
     var title: String
-    var color: backgroundColorEnum? {
-        didSet {
-            testForBackgroundColor()
-        }
-    }
+    var color: backgroundColorEnum?
     
     init(title: String, color: backgroundColorEnum?) {
         self.title = title

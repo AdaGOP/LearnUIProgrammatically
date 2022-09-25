@@ -18,6 +18,7 @@
 		4E1234B228D8B40500DB8931 /* ReusableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1234B128D8B40500DB8931 /* ReusableStackView.swift */; };
 		4E1234C128D8CD8B00DB8931 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1234C028D8CD8B00DB8931 /* TabBarViewController.swift */; };
 		4E1234C328D8CDAB00DB8931 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1234C228D8CDAB00DB8931 /* ProductsTableViewController.swift */; };
+		4E2CFB6328E03F20001EFCE6 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2CFB6228E03F20001EFCE6 /* OnBoardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4E1234B128D8B40500DB8931 /* ReusableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableStackView.swift; sourceTree = "<group>"; };
 		4E1234C028D8CD8B00DB8931 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4E1234C228D8CDAB00DB8931 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		4E2CFB6228E03F20001EFCE6 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +70,9 @@
 			children = (
 				4E12348E28D74B6700DB8931 /* AppDelegate.swift */,
 				4E12349028D74B6700DB8931 /* SceneDelegate.swift */,
-				4E1234C028D8CD8B00DB8931 /* TabBarViewController.swift */,
-				4E12349228D74B6700DB8931 /* ViewController.swift */,
-				4E1234C228D8CDAB00DB8931 /* ProductsTableViewController.swift */,
+				4E2CFB6128E03ED4001EFCE6 /* Model */,
+				4E2CFB6028E03ECB001EFCE6 /* View */,
+				4E2CFB5F28E03E79001EFCE6 /* Controller */,
 				4E1234B028D8B0B000DB8931 /* Theme */,
 				4E12349728D74B6900DB8931 /* Assets.xcassets */,
 				4E12349928D74B6900DB8931 /* LaunchScreen.storyboard */,
@@ -88,6 +90,31 @@
 				4E1234A428D76DC600DB8931 /* OverlayOnBoarding.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		4E2CFB5F28E03E79001EFCE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E1234C028D8CD8B00DB8931 /* TabBarViewController.swift */,
+				4E12349228D74B6700DB8931 /* ViewController.swift */,
+				4E1234C228D8CDAB00DB8931 /* ProductsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4E2CFB6028E03ECB001EFCE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E2CFB6228E03F20001EFCE6 /* OnBoardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E2CFB6128E03ED4001EFCE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +190,7 @@
 				4E1234C128D8CD8B00DB8931 /* TabBarViewController.swift in Sources */,
 				4E12349328D74B6700DB8931 /* ViewController.swift in Sources */,
 				4E12348F28D74B6700DB8931 /* AppDelegate.swift in Sources */,
+				4E2CFB6328E03F20001EFCE6 /* OnBoardingView.swift in Sources */,
 				4E1234AF28D8B0A700DB8931 /* ReusableButton.swift in Sources */,
 				4E1234C328D8CDAB00DB8931 /* ProductsTableViewController.swift in Sources */,
 				4E1234AD28D8A77800DB8931 /* ReusableLabel.swift in Sources */,

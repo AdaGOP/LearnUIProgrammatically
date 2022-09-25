@@ -13,11 +13,7 @@ class ReusableLabel: UILabel {
         case title, subtitle
     }
     
-    var labelType : labelTypeEnum? {
-        didSet {
-            testForLabelType()
-        }
-    }
+    var labelType : labelTypeEnum? 
     var labelText: String
     
     init(labelText: String, labelType: labelTypeEnum?) {

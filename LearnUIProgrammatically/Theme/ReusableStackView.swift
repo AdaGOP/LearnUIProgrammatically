@@ -24,11 +24,7 @@ class ReusableStackView: UIStackView {
             testAxisValue()
         }
     }
-    var distributionValue: distributionEnum? {
-        didSet {
-            testDistributionValue()
-        }
-    }
+    var distributionValue: distributionEnum?
     
     init(spacingValue: CGFloat, subView: [UIView], axisValue: axisEnum?, distributionValue: distributionEnum?) {
         self.spacingValue = spacingValue
