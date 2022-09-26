@@ -13,19 +13,14 @@ class ReusableButton: UIButton {
         case blue, red
     }
     
-    var title: String
-    var color: backgroundColorEnum? {
-        didSet {
-            testForBackgroundColor()
-        }
-    }
+    public private(set) var title: String
+    public private(set) var color: backgroundColorEnum
     
-    init(title: String, color: backgroundColorEnum?) {
+    init(title: String, color: backgroundColorEnum) {
         self.title = title
-        super.init(frame: .zero)
         self.color = color
+        super.init(frame: .zero)
         self.setup()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -48,8 +43,6 @@ class ReusableButton: UIButton {
             self.backgroundColor = .blue
         case .red:
             self.backgroundColor = .red
-        case .none:
-            print("none")
         }
         
     }

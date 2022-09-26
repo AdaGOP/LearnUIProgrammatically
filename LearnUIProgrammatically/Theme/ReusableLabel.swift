@@ -13,18 +13,14 @@ class ReusableLabel: UILabel {
         case title, subtitle
     }
     
-    var labelType : labelTypeEnum? {
-        didSet {
-            testForLabelType()
-        }
-    }
-    var labelText: String
+    public private(set) var labelType : labelTypeEnum
+    public private(set) var labelText: String
     
-    init(labelText: String, labelType: labelTypeEnum?) {
+    init(labelText: String, labelType: labelTypeEnum) {
         /// Safety check 1 “A designated initializer must ensure that all of the “properties introduced by its class are initialized before it delegates up to a superclass initializer.”
         self.labelText = labelText
-        super.init(frame: .zero)
         self.labelType = labelType
+        super.init(frame: .zero)
         self.setup()
     }
     
@@ -48,8 +44,6 @@ class ReusableLabel: UILabel {
             setupTitle()
         case .subtitle:
             setupSubtitle()
-        case .none:
-            print("none")
         }
         
     }
