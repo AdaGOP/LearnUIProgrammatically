@@ -24,7 +24,7 @@ class OverlayOnBoarding: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.text = title
@@ -35,7 +35,7 @@ class OverlayOnBoarding: UIView {
         return titleLabel
     }()
     
-    lazy var containerView: UIView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 12
@@ -43,7 +43,7 @@ class OverlayOnBoarding: UIView {
         return view
     }()
     
-    lazy var backgroundView: UIView = {
+    private lazy var backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.alpha = 0.5
@@ -51,7 +51,7 @@ class OverlayOnBoarding: UIView {
         return view
     }()
     
-    lazy var arrowImage: UIImageView = {
+    private lazy var arrowImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Polygon"))
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +67,7 @@ class OverlayOnBoarding: UIView {
         setupViews()
     }
     
-    func setupViews() {
+    private func setupViews() {
         alpha = 0
         
         // TODO

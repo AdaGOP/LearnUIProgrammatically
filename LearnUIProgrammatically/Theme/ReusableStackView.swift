@@ -17,17 +17,17 @@ class ReusableStackView: UIStackView {
         case fillProportionally, fill
     }
     
-    var spacingValue: CGFloat
-    var subView: [UIView]
-    var axisValue: axisEnum?
-    var distributionValue: distributionEnum?
+    public private(set) var spacingValue: CGFloat
+    public private(set) var subView: [UIView]
+    public private(set) var axisValue: axisEnum
+    public private(set) var distributionValue: distributionEnum
     
-    init(spacingValue: CGFloat, subView: [UIView], axisValue: axisEnum?, distributionValue: distributionEnum?) {
+    init(spacingValue: CGFloat, subView: [UIView], axisValue: axisEnum, distributionValue: distributionEnum) {
         self.spacingValue = spacingValue
         self.subView = subView
-        super.init(frame: .zero)
         self.axisValue = axisValue
         self.distributionValue = distributionValue
+        super.init(frame: .zero)
         self.setup()
     }
     
@@ -52,8 +52,6 @@ class ReusableStackView: UIStackView {
             self.axis = .horizontal
         case .vertical:
             self.axis = .vertical
-        default:
-            print("none")
         }
     }
     
@@ -63,8 +61,6 @@ class ReusableStackView: UIStackView {
             self.distribution = .fillProportionally
         case .fill:
             self.distribution = .fill
-        default:
-            print("none")
         }
     }
 
