@@ -21,7 +21,8 @@ class TabBarViewController: UITabBarController {
     func setupVCs() {
         viewControllers = [
             createNavController(for: ViewController(), title: "On Boarding", image: UIImage(systemName: "character.bubble")!, selectedImage: UIImage(systemName: "character.bubble.fill")!),
-            createNavController(for: ProductsViewController(), title: "Products", image: UIImage(systemName: "bag")!, selectedImage: UIImage(systemName: "bag.fill")!)
+            createNavController(for: ProductsViewController(), title: "Products", image: UIImage(systemName: "bag")!, selectedImage: UIImage(systemName: "bag.fill")!),
+            createNavController(for: ProgressViewController(), title: "Progress", image: UIImage(systemName: "chart.bar")!, selectedImage: UIImage(systemName: "chart.bar.fill")!)
         ]
     }
 
